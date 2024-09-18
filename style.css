@@ -1,0 +1,454 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  letter-spacing: -0.8px;
+}
+
+:root {
+  --Marine-blue: hsl(213, 100%, 23%);
+  --Purplish-blue: hsl(243, 100%, 62%);
+  --Pastel-blue: hsl(228, 100%, 84%);
+  --Light-blue: hsl(206, 94%, 87%);
+  --Strawberry-red: hsl(354, 84%, 57%);
+
+  /* ======Neutral============= */
+
+  --Cool-gray: hsl(231, 11%, 63%);
+  --Light-gray: hsl(229, 24%, 87%);
+  --Magnolia: hsl(217, 100%, 97%);
+  --Alabaster: hsl(231, 100%, 99%);
+  --White: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  background-color: var(--Magnolia);
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+h1 {
+  color: var(--Marine-blue);
+  font-size: 30px;
+}
+h2 {
+  font-size: 15px;
+  letter-spacing: -0.8px;
+}
+p {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+button {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+label {
+  color: var(--Marine-blue);
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: -0.2px;
+}
+
+.flex {
+  display: flex;
+}
+.grid {
+  display: grid;
+}
+
+.muted-text {
+  color: var(--Cool-gray);
+  font-weight: 500;
+}
+
+.container {
+  background-color: var(--White);
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+  height: 80%;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+/* =================SIDEBAR=============== */
+
+.sidebar {
+  background-image: url(./assets/images/bg-sidebar-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 25rem;
+  height: 100%;
+  padding: 2.5rem 2rem;
+  border-radius: 10px;
+}
+
+.sidebar .step {
+  gap: 1rem;
+  color: var(--White);
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.sidebar .active span {
+  background-color: var(--Light-blue);
+  color: var(--Purplish-blue);
+}
+.step span {
+  border: 1px solid var(--Light-gray);
+  padding: 7px 13px;
+  border-radius: 50%;
+}
+.step div p {
+  opacity: 0.5;
+  font-size: 12px;
+}
+
+/* =======================STEPS=================== */
+.steps-container {
+  width: 100%;
+  height: 100%;
+  padding: 0 5rem;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.steps-container .step-container {
+  height: 100%;
+}
+
+.steps-container form {
+  flex-direction: column;
+  height: 90%;
+  margin-top: 3rem;
+}
+.steps-container form .btns {
+  margin-top: auto;
+  justify-content: space-between;
+}
+.steps-container form .next-step-btn {
+  background-color: var(--Marine-blue);
+  color: var(--Light-blue);
+  margin-left: auto;
+}
+.steps-container form .next-step-btn:hover {
+  opacity: 0.9;
+}
+.steps-container .go-back-btn {
+  background-color: var(--White);
+  color: var(--Cool-gray);
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.steps-container .go-back-btn:hover {
+  color: var(--Marine-blue);
+}
+
+.steps-container .step-desc {
+  margin: 0.6rem 0 2.5rem 0;
+}
+/* ========================STEP1=================== */
+.step-1 .input-container {
+  width: 100%;
+}
+.step-1 form input {
+  width: 100%;
+  height: 45px;
+  border-radius: 5px;
+  border: 1.2px solid var(--Light-gray);
+  margin: 0.5rem 0 1rem 0;
+  color: var(--Marine-blue);
+  font-size: 16px;
+  font-weight: 700;
+  padding-left: 1rem;
+}
+.step-1 form input:focus {
+  outline-color: var(--Purplish-blue);
+}
+.step-1 form input::placeholder {
+  color: var(--Cool-gray);
+}
+
+/* =======================STEP2==================== */
+.step-2 {
+  display: none;
+}
+.step-2 .plans {
+  gap: 1rem;
+}
+.step-2 .plans .plan {
+  width: 40%;
+  height: 150px;
+  border: 1px solid var(--Light-gray);
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  transition: 0.2s;
+}
+.step-2 .plans .plan:hover {
+  border-color: var(--Purplish-blue);
+  cursor: pointer;
+}
+.step-2 .plans .plan.active {
+  background-color: var(--Magnolia);
+  border-color: var(--Purplish-blue);
+}
+.yearly-sub {
+  display: none;
+}
+.step-2 .subscription {
+  background-color: var(--Magnolia);
+  justify-content: center;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  gap: 2rem;
+  border-radius: 8px;
+}
+.step-2 .subscription h2 {
+  color: var(--Cool-gray);
+}
+.step-2 .subscription .active {
+  color: var(--Marine-blue);
+}
+.step-2 .subscription div {
+  background-color: var(--Marine-blue);
+  border-radius: 15px;
+  width: 40px;
+  padding: 0 0 3px 3px;
+  cursor: pointer;
+}
+.step-2 .subscription div span {
+  background-color: var(--White);
+  padding: 0.1em 6px;
+  color: var(--White);
+  border-radius: 50%;
+  font-size: 10px;
+}
+
+/* =================STEP3===================== */
+.step-3 {
+  display: none;
+  height: 100%;
+  width: 100%;
+}
+.step-3 .add-ons {
+  flex-direction: column;
+  gap: 1rem;
+}
+.step-3 .add-on h2 {
+  color: var(--Marine-blue);
+  font-weight: 700;
+}
+.step-3 .add-on {
+  align-items: center;
+  border: 1px solid var(--Light-gray);
+  padding: 1rem;
+  gap: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.step-3 .add-on:hover {
+  border-color: var(--Purplish-blue);
+}
+.step-3 .active {
+  border-color: var(--Purplish-blue);
+  background-color: var(--Magnolia);
+}
+.step-3 .add-on span {
+  margin-left: auto;
+  color: var(--Purplish-blue);
+  font-weight: 500;
+}
+.step-3 .add-on i {
+  position: absolute;
+  margin-left: 5px;
+  color: var(--White);
+  font-size: 10px;
+}
+.step-3 .add-on input[type="radio"] {
+  display: grid;
+  place-content: center;
+  appearance: none;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 1px solid var(--Light-gray);
+  border-radius: 5px;
+  align-items: center;
+  background-color: #fff;
+  cursor: pointer;
+}
+.step-3 .add-on input[type="radio"]:checked {
+  background-color: var(--Purplish-blue);
+}
+
+/* =================STEP4=================== */
+
+.step-4 {
+  display: none;
+  height: 100%;
+  width: 100%;
+}
+.step-4 .summary {
+  background-color: var(--Magnolia);
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 8px;
+  padding: 1rem;
+}
+.step-4 .summary a {
+  font-size: 14px;
+  cursor: pointer;
+}
+.step-4 .summary .choice,
+.step-4 .total {
+  justify-content: space-between;
+}
+.step-4 .summary .choice span {
+  color: var(--Marine-blue);
+  font-size: 12px;
+  font-weight: 600;
+}
+.step-4 .summary .plan-selected {
+  border-bottom: 1px solid var(--Light-gray);
+  padding-bottom: 1rem;
+}
+.step-4 .summary .plan-selected h2 {
+  color: var(--Marine-blue);
+}
+.step-4 .summary .plan-selected a:hover {
+  color: var(--Purplish-blue);
+}
+.step-4 .summary .plan-selected span {
+  font-size: 15px !important;
+}
+.step-4 .summary .addOns-selected {
+  flex-direction: column;
+  gap: 1rem;
+}
+.step-4 .total {
+  padding: 1rem;
+}
+.step-4 .total span {
+  color: var(--Purplish-blue);
+  font-weight: 700;
+}
+
+/*===========================STEP5==================*/
+.thank-you {
+  display: none;
+}
+.step-5 {
+  height: 100%;
+  padding: 0 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  /* display: none; */
+}
+.step-5 p {
+  font-size: 15px;
+  text-align: center;
+  color: var(--Light-gray);
+}
+.error {
+  border-color: var(--Strawberry-red) !important;
+}
+.error-msg {
+  display: none;
+  float: right;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@media (max-width: 950px) {
+  .container {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+  }
+  .steps-container {
+    padding: 0;
+    background-color: var(--White);
+  }
+  .steps-container form {
+    background-color: var(--Magnolia);
+  }
+  .steps-container .form-container {
+    background-color: var(--White);
+    padding: 2rem 1rem;
+    border-radius: 10px;
+    flex-direction: column;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    left: 1rem;
+    right: 1rem;
+    top: 8rem;
+  }
+  .sidebar {
+    border-radius: 0px;
+    width: 100%;
+    height: 15rem;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 1rem;
+    background-position-y: 85%;
+  }
+  .step div {
+    display: none;
+  }
+  .steps-container .btns {
+    padding: 1rem;
+    background-color: var(--White);
+  }
+  .plans {
+    flex-direction: column;
+    width: 100%;
+  }
+  .step-2 .plans .plan {
+    width: 100%;
+    height: 80px;
+    gap: 1rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+  }
+  .step-container .step-5-form {
+    margin: 0;
+  }
+  .form-container.step-5 {
+    height: 60%;
+  }
+  .thank-you {
+    background-color: var(--Magnolia);
+  }
+  .attribution {
+    display: none;
+  }
+}
